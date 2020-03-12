@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan =  require("morgan");
-
+const wikiRouter = require('./routes/wiki');
+const userRouter = require('./routes/user');
 
 
 // const { db } = require('./models');
@@ -11,6 +12,7 @@ const morgan =  require("morgan");
 const models = require('./models');
 const app = express();
 
+app.use('/wiki', wikiRouter);
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
