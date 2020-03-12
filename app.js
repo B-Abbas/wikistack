@@ -13,6 +13,7 @@ const models = require('./models');
 const app = express();
 
 app.use('/wiki', wikiRouter);
+app.use('/user', userRouter);
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
